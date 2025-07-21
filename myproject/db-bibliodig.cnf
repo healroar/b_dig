@@ -1,0 +1,5 @@
+[Client]
+database = bibliografia-digitalizada
+user = sibucsc
+password = s0p0rt3dti-Django
+default-character-set = utf8
