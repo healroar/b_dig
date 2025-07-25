@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-(7kho^lnd9+!#+dw^!l=x@jo7eecfr2f+^!tw(19!(h22_g(rp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['10.15.0.186','localhost']
+ALLOWED_HOSTS = ['10.15.0.186','localhost','127.0.0.1']
 
 
 # Application definition
@@ -74,14 +74,27 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# PARA LOCALHOST
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': os.path.join(BASE_DIR, 'myproject', 'db-bibliodig.cnf'),
-        },
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "bibliografia-digitalizada",
+        'USER': 'root',  # o el usuario correcto
+        'PASSWORD': '',  # asegurarse que no esté vacío
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
+
+# PARA SERVIDOR
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'OPTIONS': {
+#             'read_default_file': os.path.join(BASE_DIR, 'myproject', 'db-bibliodig.cnf'),
+#         },
+#     }
+# }
 
 
 # Password validation
