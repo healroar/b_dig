@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Libro, Asignatura, LibroAsignatura
+from .models import Libro, Asignatura, LibroAsignatura, Facultad, Carrera
 
 class LibroSerializer(serializers.ModelSerializer):
     class Meta:
@@ -14,4 +14,14 @@ class AsignaturaSerializer(serializers.ModelSerializer):
 class LibroAsignaturaSerializer(serializers.ModelSerializer):
     class Meta:
         model = LibroAsignatura
+        fields = '__all__'
+
+class FacultadSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Facultad
+        fields = '__all__'
+
+class CarreraSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Carrera
         fields = '__all__'

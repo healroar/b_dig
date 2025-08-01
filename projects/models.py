@@ -20,7 +20,7 @@ class Carrera(models.Model):
         return self.nom_carrera
 
 class Asignatura(models.Model):
-    cod_asig = models.CharField(max_length=12)
+    cod_asig = models.CharField(max_length=12, default='SIN_CODIGO')
     nom_asig = models.CharField(max_length=255)
     cod_carrera = models.ForeignKey(Carrera, on_delete=models.CASCADE)
     semestre = models.IntegerField(default=0)
@@ -48,13 +48,6 @@ class Libro(models.Model):
 
     def __str__(self):
         return self.titulo
-
-class Asignatura(models.Model):
-    nombre = models.CharField(max_length=255)
-
-    def __str__(self):
-        return self.nombre
-
 
 class LibroAsignatura(models.Model):
     libro = models.ForeignKey(Libro, on_delete=models.CASCADE)
